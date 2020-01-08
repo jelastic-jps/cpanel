@@ -1,12 +1,12 @@
 {
   "jpsType": "install",
   "application": {
-    "id": "cpanel-centos7",
-    "logo": "https://cpanel.com/assets/img/cP-logo.png",
+    "id": "cpanel68-centos7",
+    "logo": "https://github.com/jelastic-jps/cpanel/blob/master/images/logo.png?raw=true",
     "description": {
-      "text": "Centos 7 with the preinstalled cPanel & WHM control panel. cPanel & WHM is a modern control panel which is installing with the extended set of Software."
+      "text": "Centos 7 with the preinstalled cPanel & WHM control panel v68.0.19. cPanel & WHM is a modern control panel which is installing with the extended set of Software."
     },
-    "name": "cPanel on Centos 7",
+    "name": "cPanel v68.0.19 on Centos 7",
     "env": {
       "onBeforeDetachExtIp": {
         "executeShellCommands": [
@@ -18,11 +18,11 @@
             "extip": true,
             "docker": {
               "nodeMission": "cp",
-              "image": "jelastic/jelastic-cpanel"
+              "image": "jelasticdocker/cpanel:68"
             },
-            "cloudlets": 8,
+            "cloudlets": 16,
             "nodeType": "docker",
-            "displayName": "App Server"
+            "displayName": "cPanel server"
           }
         ],
         "ssl": false,
@@ -39,7 +39,7 @@
       "email": "Congratulations! A new cPanel application has been successfully deployed to your account in Jelastic Cloud!<br /><br /> Please use the following data for admin access: <br /><b>WHM URL:</b> <a href='https://${env.domain}:2087' target='_blank'>https://${env.domain}:2087</a><br /><b>Login:</b> root<br /><b>Password:</b> ${nodes.cp.password}<br /><b>Public IP:</b> ${nodes.cp.extIPs}<br /><br /> As always, we're here to help you if you have any problems, questions, concerns, or feedback."
     },
     "homepage": "https://cpanel.com/",
-    "version": "0.1",
+    "version": "68.0.19",
     "onInstall": [
       {
         "restartContainers": {
@@ -48,5 +48,5 @@
       }
     ]
   },
-  "jpsVersion": "0.3"
+  "jpsVersion": "0.99"
 }
